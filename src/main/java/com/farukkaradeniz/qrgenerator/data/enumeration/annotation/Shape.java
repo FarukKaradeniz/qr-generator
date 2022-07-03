@@ -1,13 +1,13 @@
 package com.farukkaradeniz.qrgenerator.data.enumeration.annotation;
 
-import com.farukkaradeniz.qrgenerator.data.enumeration.validator.QrShapeEnumValidator;
+import com.farukkaradeniz.qrgenerator.data.enumeration.validator.ShapeValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.*;
 
 @Documented
-@Constraint(validatedBy = QrShapeEnumValidator.class)
+@Constraint(validatedBy = ShapeValidator.class)
 @Target(value = {ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Shape {

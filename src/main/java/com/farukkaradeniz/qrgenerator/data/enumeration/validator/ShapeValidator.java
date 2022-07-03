@@ -6,7 +6,7 @@ import com.farukkaradeniz.qrgenerator.data.enumeration.annotation.Shape;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class QrShapeEnumValidator implements ConstraintValidator<Shape, String> {
+public class ShapeValidator implements ConstraintValidator<Shape, String> {
 
     @Override
     public void initialize(Shape constraintAnnotation) {
