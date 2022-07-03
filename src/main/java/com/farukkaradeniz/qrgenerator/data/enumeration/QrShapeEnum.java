@@ -1,5 +1,7 @@
 package com.farukkaradeniz.qrgenerator.data.enumeration;
 
+import java.util.Arrays;
+
 public enum QrShapeEnum {
     CIRCLE("CIRCLE"),
     SQUARE("SQUARE");
@@ -12,5 +14,12 @@ public enum QrShapeEnum {
 
     public String getValue() {
         return value;
+    }
+
+    public static QrShapeEnum fromValue(String value) {
+        return Arrays.stream(QrShapeEnum.values())
+                .filter(shape -> shape.getValue().equals(value))
+                .findFirst()
+                .orElse(null);
     }
 }

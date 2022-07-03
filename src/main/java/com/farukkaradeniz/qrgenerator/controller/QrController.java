@@ -6,13 +6,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/qr")
 public class QrController {
 
     @PostMapping
-    public ResponseEntity<CreateQrResponse> createQr(@RequestBody CreateQrRequest request) {
+    public ResponseEntity<CreateQrResponse> createQr(@Valid @RequestBody CreateQrRequest request) {
         log.info("Create QR Request {}", request);
 
         return ResponseEntity.ok(new CreateQrResponse("SUCCESS"));
