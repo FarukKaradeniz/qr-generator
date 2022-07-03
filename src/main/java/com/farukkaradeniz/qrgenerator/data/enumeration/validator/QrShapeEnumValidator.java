@@ -1,15 +1,15 @@
 package com.farukkaradeniz.qrgenerator.data.enumeration.validator;
 
 import com.farukkaradeniz.qrgenerator.data.enumeration.QrShapeEnum;
-import com.farukkaradeniz.qrgenerator.data.enumeration.annotation.QrShape;
+import com.farukkaradeniz.qrgenerator.data.enumeration.annotation.Shape;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class QrShapeEnumValidator implements ConstraintValidator<QrShape, String> {
+public class QrShapeEnumValidator implements ConstraintValidator<Shape, String> {
 
     @Override
-    public void initialize(QrShape constraintAnnotation) {
+    public void initialize(Shape constraintAnnotation) {
         ConstraintValidator.super.initialize(constraintAnnotation);
     }
 

@@ -10,7 +10,7 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = QrShapeEnumValidator.class)
 @Target(value = {ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface QrShape {
+public @interface Shape {
     String message() default "Invalid QR shape parameter";
 
     Class<?>[] groups() default {};
