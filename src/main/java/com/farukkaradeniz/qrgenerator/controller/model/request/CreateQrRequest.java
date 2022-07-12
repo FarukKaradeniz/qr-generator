@@ -9,9 +9,15 @@ import lombok.Data;
 @Data
 public class CreateQrRequest {
     private String text;
+
     @Color
     private String color = QrColorEnum.BLACK.getValue();
+
+    @Color
+    private String backgroundColor = QrColorEnum.WHITE.getValue();
+
     private Byte[] image;
+
     @Shape
     private String shape = QrShapeEnum.SQUARE.getValue();
 }
