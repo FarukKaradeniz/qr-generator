@@ -25,15 +25,4 @@ public class CreateQrRequest {
 
     @Size
     private String size = QrSizeEnum.MEDIUM.getValue();
-
-    // TODO DTO'da olacak bu size metodu
-    public int getQrSize() {
-        if (QrSizeEnum.SMALL.getValue().equals(size)) {
-            return 150;
-        } else if (QrSizeEnum.MEDIUM.getValue().equals(size)) {
-            return 250;
-        } else { // QrSizeEnum.LARGE
-            return 400;
-        }
-    }
 }

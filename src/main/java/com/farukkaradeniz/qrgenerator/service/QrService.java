@@ -1,7 +1,7 @@
 package com.farukkaradeniz.qrgenerator.service;
 
-import com.farukkaradeniz.qrgenerator.controller.model.request.CreateQrRequest;
 import com.farukkaradeniz.qrgenerator.data.constant.QrConstants;
+import com.farukkaradeniz.qrgenerator.data.dto.CreateQrRequestDTO;
 import com.farukkaradeniz.qrgenerator.util.Utils;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.client.j2se.MatrixToImageConfig;
@@ -19,13 +19,14 @@ import java.nio.file.Path;
 public class QrService {
 
     @SneakyThrows
-    public void createQrCode(CreateQrRequest request) {
+    public void createQrCode(CreateQrRequestDTO request) {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         var bitMatrix = qrCodeWriter.encode(request.getText(), BarcodeFormat.QR_CODE, request.getQrSize(), request.getQrSize());
         var outputStream = new ByteArrayOutputStream();
 
+        var config = new MatrixToImageConfig(Utils.parseColorHexInteger(request.getColor()),
+                Utils.parseColorHexInteger(request.getBackgroundColor()));
 
-        var config = new MatrixToImageConfig(Utils.parseColorHexInteger(request.getColor()), Utils.parseColorHexInteger(request.getBackgroundColor())); // onColor kod rengi, offColor arkaplan rengi
         MatrixToImageWriter.writeToStream(bitMatrix, QrConstants.QR_IMAGE_FORMAT, outputStream, config);
         byte[] bytes = outputStream.toByteArray();
 
@@ -34,9 +35,10 @@ public class QrService {
     }
 
     @SneakyThrows
-    public void testQrCode(CreateQrRequest request) {
+    public void testQrCode(CreateQrRequestDTO request) {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         var bitMatrix = qrCodeWriter.encode(request.getText(), BarcodeFormat.QR_CODE, request.getQrSize(), request.getQrSize());
+
         // MatrixToImageWriter.toBufferedImage(bitMatrix);
         Path path = FileSystems.getDefault().getPath("C:\\Users\\faruk\\Desktop\\test\\qr.png");
         MatrixToImageWriter.writeToPath(bitMatrix, QrConstants.QR_IMAGE_FORMAT, path);

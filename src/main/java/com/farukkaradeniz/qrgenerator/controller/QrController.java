@@ -2,6 +2,7 @@ package com.farukkaradeniz.qrgenerator.controller;
 
 import com.farukkaradeniz.qrgenerator.controller.model.request.CreateQrRequest;
 import com.farukkaradeniz.qrgenerator.controller.model.response.CreateQrResponse;
+import com.farukkaradeniz.qrgenerator.mapper.QrMapper;
 import com.farukkaradeniz.qrgenerator.service.QrService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,7 @@ public class QrController {
     @PostMapping
     public ResponseEntity<CreateQrResponse> createQr(@Valid @RequestBody CreateQrRequest request) {
         log.info("Create QR Request {}", request);
-        qrService.createQrCode(request);
+        qrService.createQrCode(QrMapper.toCreateQrRequestDTO(request));
 
         return ResponseEntity.ok(new CreateQrResponse("SUCCESS"));
     }
@@ -32,7 +33,7 @@ public class QrController {
 
         CreateQrRequest request = new CreateQrRequest();
         request.setText("farukkaradeniz.com");
-        qrService.testQrCode(request);
+        qrService.testQrCode(QrMapper.toCreateQrRequestDTO(request));
 
         return ResponseEntity.ok(new CreateQrResponse("SUCCESS"));
     }
