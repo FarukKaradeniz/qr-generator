@@ -1,13 +1,17 @@
 package com.farukkaradeniz.qrgenerator.controller;
 
 import com.farukkaradeniz.qrgenerator.controller.model.request.CreateQrRequest;
-import com.farukkaradeniz.qrgenerator.controller.model.response.CreateQrResponse;
 import com.farukkaradeniz.qrgenerator.mapper.QrMapper;
 import com.farukkaradeniz.qrgenerator.service.QrService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
@@ -19,23 +23,10 @@ public class QrController {
 
     private final QrService qrService;
 
-    @PostMapping
-    public ResponseEntity<CreateQrResponse> createQr(@Valid @RequestBody CreateQrRequest request) {
-        log.info("Create QR Request {}", request);
-        qrService.createQrCode(QrMapper.toCreateQrRequestDTO(request));
-
-        return ResponseEntity.ok(new CreateQrResponse("SUCCESS"));
-    }
-
-    @GetMapping
-    public ResponseEntity<CreateQrResponse> getQr() {
-        log.info("Get QR");
-
-        CreateQrRequest request = new CreateQrRequest();
-        request.setText("farukkaradeniz.com");
-        qrService.testQrCode(QrMapper.toCreateQrRequestDTO(request));
-
-        return ResponseEntity.ok(new CreateQrResponse("SUCCESS"));
+    @PostMapping(produces = MediaType.IMAGE_PNG_VALUE)
+    public ResponseEntity<byte[]> createQr(@Valid @RequestBody CreateQrRequest request) {
+        var responseDTO = qrService.createQrCode(QrMapper.toCreateQrRequestDTO(request));
+        return new ResponseEntity<>(QrMapper.toCreateQrResponse(responseDTO).getBody(), HttpStatus.CREATED);
     }
 
 }

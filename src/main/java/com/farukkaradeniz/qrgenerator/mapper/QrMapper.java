@@ -19,7 +19,7 @@ public class QrMapper {
 
     public static CreateQrResponse toCreateQrResponse(CreateQrResponseDTO dto) {
         return CreateQrResponse.builder()
-                .status(dto.getStatus())
+                .body(dto.getBody())
                 .build();
     }
 }

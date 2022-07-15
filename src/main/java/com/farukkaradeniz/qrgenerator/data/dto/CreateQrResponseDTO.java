@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 @Builder
 public class CreateQrResponseDTO {
-    private String status;
+    private byte[] body;
 }

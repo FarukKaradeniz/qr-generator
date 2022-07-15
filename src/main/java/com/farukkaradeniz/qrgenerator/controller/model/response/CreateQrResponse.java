@@ -8,5 +8,5 @@ import lombok.*;
 @Getter
 @Builder
 public class CreateQrResponse {
-    private String status;
+    private byte[] body;
 }
