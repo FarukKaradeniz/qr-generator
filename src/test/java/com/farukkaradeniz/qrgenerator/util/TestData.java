@@ -2,6 +2,7 @@ package com.farukkaradeniz.qrgenerator.util;
 
 import com.farukkaradeniz.qrgenerator.controller.model.request.CreateQrRequest;
 import com.farukkaradeniz.qrgenerator.data.dto.CreateQrRequestDTO;
+import com.farukkaradeniz.qrgenerator.data.dto.CreateQrResponseDTO;
 import com.farukkaradeniz.qrgenerator.data.enumeration.QrColorEnum;
 import com.farukkaradeniz.qrgenerator.data.enumeration.QrShapeEnum;
 import com.farukkaradeniz.qrgenerator.data.enumeration.QrSizeEnum;
@@ -29,5 +30,11 @@ public class TestData {
         request.setSize(QrSizeEnum.MEDIUM.getValue());
 
         return request;
+    }
+
+    public static CreateQrResponseDTO getSampleCreateQrResponseDTO() {
+        return CreateQrResponseDTO.builder()
+                .body(new byte[]{})
+                .build();
     }
 }

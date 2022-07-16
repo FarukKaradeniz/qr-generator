@@ -1,10 +1,7 @@
 package com.farukkaradeniz.qrgenerator.util;
 
-import lombok.experimental.UtilityClass;
-
 import java.util.regex.Pattern;
 
-@UtilityClass
 public class Utils {
 
     public static int parseColorHexInteger(String color) {
