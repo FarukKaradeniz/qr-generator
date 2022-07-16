@@ -1,10 +1,8 @@
 package com.farukkaradeniz.qrgenerator.controller.model.response;
 
-import lombok.*;
+import lombok.Builder;
+import lombok.Getter;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
 @Getter
 @Builder
 public class CreateQrResponse {

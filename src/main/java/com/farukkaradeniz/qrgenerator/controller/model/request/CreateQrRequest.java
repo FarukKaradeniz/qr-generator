@@ -6,9 +6,11 @@ import com.farukkaradeniz.qrgenerator.data.enumeration.QrSizeEnum;
 import com.farukkaradeniz.qrgenerator.data.enumeration.annotation.Color;
 import com.farukkaradeniz.qrgenerator.data.enumeration.annotation.Shape;
 import com.farukkaradeniz.qrgenerator.data.enumeration.annotation.Size;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class CreateQrRequest {
     private String text;
 
