@@ -22,7 +22,6 @@ public class QrService {
     public CreateQrResponseDTO createQrCode(CreateQrRequestDTO request) {
         log.info("Create QR Request {}", request);
 
-
         try (
                 ByteArrayOutputStream outputStream = new ByteArrayOutputStream()
         ) {
@@ -40,7 +39,8 @@ public class QrService {
                     .body(bytes)
                     .build();
         } catch (Exception e) {
-            throw new QrException("Error occurred while generating QR Code");
+            log.error("Create QR Request Error: {}", e.getMessage());
+            throw new QrException(QrConstants.QR_CREATE_EXCEPTION_MESSAGE);
         }
     }
 

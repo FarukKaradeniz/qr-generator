@@ -16,7 +16,7 @@ public class Utils {
     }
 
     public static boolean validateColorHex(String color) {
-        if (!color.startsWith("#") || color.length() != 7) { // Only Expecting 6 Digits Hex Code
+        if (color == null || !color.startsWith("#") || color.length() != 7) { // Only Expecting 6 Digits Hex Code
             return false;
         }
         return Pattern.compile("[a-fA-F0-9]{6}").matcher(color.substring(1)).matches();
