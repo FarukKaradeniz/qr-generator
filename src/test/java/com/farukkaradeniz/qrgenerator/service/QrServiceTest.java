@@ -17,6 +17,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.core.io.ClassPathResource;
 
 import javax.imageio.ImageIO;
 import java.io.ByteArrayInputStream;
@@ -54,6 +55,23 @@ public class QrServiceTest {
     public void createQrCode_generatesImage_withDifferentShapes(QrShapeEnum shape) {
         var requestDTO = TestData.getSampleCreateQrRequestDTO();
         requestDTO.setShape(shape.getValue());
+
+        var responseDTO = qrService.createQrCode(requestDTO);
+
+        assertThat(responseDTO).isNotNull();
+        assertThat(responseDTO.getBody()).isNotNull().isNotEmpty();
+
+        var result = readQrFromByteArray(responseDTO.getBody());
+
+        assertThat(result.getText()).isEqualTo(requestDTO.getText());
+        assertThat(result.getBarcodeFormat()).isEqualTo(BarcodeFormat.QR_CODE);
+    }
+
+    @SneakyThrows
+    @Test
+    public void createQrCode_generatesImage_withOverlayImage() {
+        var requestDTO = TestData.getSampleCreateQrRequestDTO();
+        requestDTO.setImage(new ClassPathResource("twitter-logo.jpg").getInputStream().readAllBytes());
 
         var responseDTO = qrService.createQrCode(requestDTO);
 

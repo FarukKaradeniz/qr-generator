@@ -28,6 +28,7 @@ public class TestData {
         request.setBackgroundColor(QrColorEnum.WHITE.getValue());
         request.setShape(QrShapeEnum.SQUARE.getValue());
         request.setSize(QrSizeEnum.MEDIUM.getValue());
+        request.setImage(null);
 
         return request;
     }

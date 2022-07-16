@@ -9,9 +9,12 @@ import com.farukkaradeniz.qrgenerator.data.enumeration.annotation.Size;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.NotNull;
+
 @Getter
 @Setter
 public class CreateQrRequest {
+    @NotNull
     private String text;
 
     @Color
@@ -20,7 +23,7 @@ public class CreateQrRequest {
     @Color
     private String backgroundColor = QrColorEnum.WHITE.getValue();
 
-    private Byte[] image;
+    private String image; // Base64 Image
 
     @Shape
     private String shape = QrShapeEnum.SQUARE.getValue();
