@@ -6,7 +6,6 @@ import com.farukkaradeniz.qrgenerator.data.dto.CreateQrResponseDTO;
 import com.farukkaradeniz.qrgenerator.data.exception.QrException;
 import com.farukkaradeniz.qrgenerator.util.Utils;
 import com.google.zxing.BarcodeFormat;
-import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageConfig;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.qrcode.QRCodeWriter;
@@ -14,7 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 
 @Slf4j
 @Service
@@ -41,7 +39,7 @@ public class QrService {
             return CreateQrResponseDTO.builder()
                     .body(bytes)
                     .build();
-        } catch (WriterException | IOException e) {
+        } catch (Exception e) {
             throw new QrException("Error occurred while generating QR Code");
         }
     }
