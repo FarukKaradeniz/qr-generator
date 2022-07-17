@@ -15,6 +15,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 public class CreateQrRequest {
     @NotNull
+    @javax.validation.constraints.Size(max = 3096, min = 1)
     private String text;
 
     @Color
