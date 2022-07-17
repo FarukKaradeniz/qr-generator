@@ -17,6 +17,12 @@
         <java.version>17</java.version>
         <sonar.organization>farukkaradeniz</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.coverage.exclusions>
+            **/model/**,
+            **/dto/**,
+            **/constant/**,
+            **/enumeration/**
+        </sonar.coverage.exclusions>
     </properties>
     <dependencies>
         <dependency>
