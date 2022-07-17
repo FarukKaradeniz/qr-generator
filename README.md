@@ -6,13 +6,37 @@ This application creates a QR Code for given text.
 
 ## Example:
 
-#### Given text:
+#### Request Payload:
 
-farukkaradeniz.com
+```json
+{
+  "text": "farukkaradeniz.com"
+}
+```
 
 #### Generated QR:
 
 ![QR Code](https://github.com/FarukKaradeniz/common-repository/raw/master/pictures/qr-text-farukkaradeniz.com.png)
+
+---
+
+## Example 2
+
+#### Request Payload:
+
+```json
+{
+  "text": "farukkaradeniz.com",
+  "color": "#1DA1F2",
+  "size": "LARGE",
+  "image": "/9j/4AAQ.../9k="
+}
+
+```
+
+#### Generated QR:
+
+![QR Code](https://github.com/FarukKaradeniz/common-repository/raw/master/pictures/qr-twitter-logo.png)
 
 POST Request Payload
 
@@ -23,7 +47,7 @@ POST Request Payload
   "backgroundColor": "#00FF00",
   "shape": "SQUARE",
   "size": "MEDIUM",
-  "image": "BASE64 IMAGE"
+  "image": "BASE64 ENCODED IMAGE"
 }
 ```
 
