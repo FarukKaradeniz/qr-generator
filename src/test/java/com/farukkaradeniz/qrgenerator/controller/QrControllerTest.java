@@ -1,6 +1,5 @@
 package com.farukkaradeniz.qrgenerator.controller;
 
-import com.farukkaradeniz.qrgenerator.data.enumeration.QrShapeEnum;
 import com.farukkaradeniz.qrgenerator.data.enumeration.QrSizeEnum;
 import com.farukkaradeniz.qrgenerator.mapper.QrMapper;
 import com.farukkaradeniz.qrgenerator.service.QrService;
@@ -38,27 +37,6 @@ public class QrControllerTest {
     public void createQrCode_generatesResponse_withDifferentSizes(QrSizeEnum size) {
         var request = TestData.getSampleCreateQrRequest();
         request.setSize(size.getValue());
-
-        Mockito.when(qrService.createQrCode(QrMapper.toCreateQrRequestDTO(request)))
-                .thenReturn(TestData.getSampleCreateQrResponseDTO());
-
-        var mvcRequest = MockMvcRequestBuilders.post("/api/v1/qr")
-                .content(asJsonString(request))
-                .contentType(MediaType.APPLICATION_JSON)
-                .accept(MediaType.IMAGE_PNG_VALUE);
-
-        mockMvc.perform(mvcRequest)
-                .andExpect(status().isCreated())
-                .andExpect(content().contentType(MediaType.IMAGE_PNG_VALUE));
-
-    }
-
-    @SneakyThrows
-    @ParameterizedTest
-    @EnumSource(QrShapeEnum.class)
-    public void createQrCode_generatesResponse_withDifferentShapes(QrShapeEnum shape) {
-        var request = TestData.getSampleCreateQrRequest();
-        request.setShape(shape.getValue());
 
         Mockito.when(qrService.createQrCode(QrMapper.toCreateQrRequestDTO(request)))
                 .thenReturn(TestData.getSampleCreateQrResponseDTO());

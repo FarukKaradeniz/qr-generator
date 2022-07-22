@@ -1,7 +1,6 @@
 package com.farukkaradeniz.qrgenerator.service;
 
 import com.farukkaradeniz.qrgenerator.data.constant.QrConstants;
-import com.farukkaradeniz.qrgenerator.data.enumeration.QrShapeEnum;
 import com.farukkaradeniz.qrgenerator.data.enumeration.QrSizeEnum;
 import com.farukkaradeniz.qrgenerator.util.TestData;
 import com.google.zxing.BarcodeFormat;
@@ -37,24 +36,6 @@ public class QrServiceTest {
     public void createQrCode_generatesImage_withDifferentSizes(QrSizeEnum size) {
         var requestDTO = TestData.getSampleCreateQrRequestDTO();
         requestDTO.setSize(size.getValue());
-
-        var responseDTO = qrService.createQrCode(requestDTO);
-
-        assertThat(responseDTO).isNotNull();
-        assertThat(responseDTO.getBody()).isNotNull().isNotEmpty();
-
-        var result = readQrFromByteArray(responseDTO.getBody());
-
-        assertThat(result.getText()).isEqualTo(requestDTO.getText());
-        assertThat(result.getBarcodeFormat()).isEqualTo(BarcodeFormat.QR_CODE);
-    }
-
-    @SneakyThrows
-    @ParameterizedTest
-    @EnumSource(QrShapeEnum.class)
-    public void createQrCode_generatesImage_withDifferentShapes(QrShapeEnum shape) {
-        var requestDTO = TestData.getSampleCreateQrRequestDTO();
-        requestDTO.setShape(shape.getValue());
 
         var responseDTO = qrService.createQrCode(requestDTO);
 

@@ -11,7 +11,6 @@ public class CreateQrRequestDTO {
     private String color;
     private String backgroundColor;
     private byte[] image;
-    private String shape;
     private String size;
 
     public int getQrSize() {

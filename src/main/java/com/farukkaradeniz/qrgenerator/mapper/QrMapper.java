@@ -14,7 +14,6 @@ public class QrMapper {
                 .color(request.getColor())
                 .backgroundColor(request.getBackgroundColor())
                 .image(request.getImage() != null ? Base64.getDecoder().decode(request.getImage()) : null)
-                .shape(request.getShape())
                 .size(request.getSize())
                 .build();
     }

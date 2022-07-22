@@ -4,7 +4,6 @@ import com.farukkaradeniz.qrgenerator.controller.model.request.CreateQrRequest;
 import com.farukkaradeniz.qrgenerator.data.dto.CreateQrRequestDTO;
 import com.farukkaradeniz.qrgenerator.data.dto.CreateQrResponseDTO;
 import com.farukkaradeniz.qrgenerator.data.enumeration.QrColorEnum;
-import com.farukkaradeniz.qrgenerator.data.enumeration.QrShapeEnum;
 import com.farukkaradeniz.qrgenerator.data.enumeration.QrSizeEnum;
 
 public class TestData {
@@ -15,7 +14,6 @@ public class TestData {
                 .text(DEFAULT_TEXT)
                 .color(QrColorEnum.BLACK.getValue())
                 .backgroundColor(QrColorEnum.WHITE.getValue())
-                .shape(QrShapeEnum.SQUARE.getValue())
                 .size(QrSizeEnum.MEDIUM.getValue())
                 .build();
     }
@@ -26,7 +24,6 @@ public class TestData {
         request.setText(DEFAULT_TEXT);
         request.setColor(QrColorEnum.BLACK.getValue());
         request.setBackgroundColor(QrColorEnum.WHITE.getValue());
-        request.setShape(QrShapeEnum.SQUARE.getValue());
         request.setSize(QrSizeEnum.MEDIUM.getValue());
         request.setImage(null);
 
