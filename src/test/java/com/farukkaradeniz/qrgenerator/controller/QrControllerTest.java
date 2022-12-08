@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(QrController.class)
-public class QrControllerTest {
+class QrControllerTest {
 
     @MockBean
     QrService qrService;
@@ -34,7 +34,7 @@ public class QrControllerTest {
     @SneakyThrows
     @ParameterizedTest
     @EnumSource(QrSizeEnum.class)
-    public void createQrCode_generatesResponse_withDifferentSizes(QrSizeEnum size) {
+    void createQrCode_generatesResponse_withDifferentSizes(QrSizeEnum size) {
         var request = TestData.getSampleCreateQrRequest();
         request.setSize(size.getValue());
 
@@ -54,7 +54,7 @@ public class QrControllerTest {
 
     @SneakyThrows
     @Test
-    public void createQrCode_generatesResponse() {
+    void createQrCode_generatesResponse() {
         var request = TestData.getSampleCreateQrRequest();
 
         Mockito.when(qrService.createQrCode(QrMapper.toCreateQrRequestDTO(request)))
@@ -73,7 +73,7 @@ public class QrControllerTest {
 
     @SneakyThrows
     @Test
-    public void createQrCode_generatesResponse_withOverlayImage() {
+    void createQrCode_generatesResponse_withOverlayImage() {
         var request = TestData.getSampleCreateQrRequest();
         request.setImage(Base64.getEncoder().encodeToString(new ClassPathResource("twitter-logo.jpg").getInputStream().readAllBytes()));
 

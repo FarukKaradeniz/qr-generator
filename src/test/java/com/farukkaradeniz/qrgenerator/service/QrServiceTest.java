@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @ExtendWith(MockitoExtension.class)
-public class QrServiceTest {
+class QrServiceTest {
 
     @InjectMocks
     QrService qrService;
@@ -33,7 +33,7 @@ public class QrServiceTest {
     @SneakyThrows
     @ParameterizedTest
     @EnumSource(QrSizeEnum.class)
-    public void createQrCode_generatesImage_withDifferentSizes(QrSizeEnum size) {
+    void createQrCode_generatesImage_withDifferentSizes(QrSizeEnum size) {
         var requestDTO = TestData.getSampleCreateQrRequestDTO();
         requestDTO.setSize(size.getValue());
 
@@ -50,7 +50,7 @@ public class QrServiceTest {
 
     @SneakyThrows
     @Test
-    public void createQrCode_generatesImage_withOverlayImage() {
+    void createQrCode_generatesImage_withOverlayImage() {
         var requestDTO = TestData.getSampleCreateQrRequestDTO();
         requestDTO.setImage(new ClassPathResource("twitter-logo.jpg").getInputStream().readAllBytes());
 
@@ -66,7 +66,7 @@ public class QrServiceTest {
     }
 
     @Test
-    public void createQrCode_throwsException() {
+    void createQrCode_throwsException() {
         var requestDTO = TestData.getSampleCreateQrRequestDTO();
         requestDTO.setColor(null);
 
@@ -76,7 +76,7 @@ public class QrServiceTest {
     }
 
     @Test
-    public void createQrCode_generatesResponse() {
+    void createQrCode_generatesResponse() {
         var requestDTO = TestData.getSampleCreateQrRequestDTO();
 
         var responseDTO = qrService.createQrCode(requestDTO);

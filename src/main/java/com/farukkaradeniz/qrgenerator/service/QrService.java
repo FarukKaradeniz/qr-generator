@@ -91,7 +91,7 @@ public class QrService {
     private BufferedImage scaleOverlay(BufferedImage overlay, int scaledWidth, int scaledHeight) {
         BufferedImage imageBuff = new BufferedImage(scaledWidth, scaledHeight, BufferedImage.TYPE_INT_ARGB);
         Graphics g = imageBuff.createGraphics();
-        g.drawImage(overlay.getScaledInstance(scaledWidth, scaledHeight, BufferedImage.SCALE_SMOOTH), 0, 0, new Color(0, 0, 0), null);
+        g.drawImage(overlay.getScaledInstance(scaledWidth, scaledHeight, Image.SCALE_SMOOTH), 0, 0, new Color(0, 0, 0), null);
         g.dispose();
 
         return imageBuff;

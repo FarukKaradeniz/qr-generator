@@ -8,6 +8,10 @@ import com.farukkaradeniz.qrgenerator.data.dto.CreateQrResponseDTO;
 import java.util.Base64;
 
 public class QrMapper {
+
+    private QrMapper() {
+    }
+
     public static CreateQrRequestDTO toCreateQrRequestDTO(CreateQrRequest request) {
         return CreateQrRequestDTO.builder()
                 .text(request.getText())

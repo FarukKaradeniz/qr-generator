@@ -4,6 +4,9 @@ import java.util.regex.Pattern;
 
 public class Utils {
 
+    private Utils() {
+    }
+
     public static int parseColorHexInteger(String color) {
         if (!validateColorHex(color)) {
             throw new IllegalArgumentException("Invalid color value");
