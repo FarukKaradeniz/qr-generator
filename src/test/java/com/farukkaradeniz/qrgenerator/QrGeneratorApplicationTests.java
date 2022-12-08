@@ -8,6 +8,7 @@ class QrGeneratorApplicationTests {
 
     @Test
     void contextLoads() {
+        QrGeneratorApplication.main(new String[]{});
     }
 
 }
