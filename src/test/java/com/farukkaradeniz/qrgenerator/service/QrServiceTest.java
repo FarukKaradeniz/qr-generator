@@ -49,10 +49,12 @@ class QrServiceTest {
     }
 
     @SneakyThrows
-    @Test
-    void createQrCode_generatesImage_withOverlayImage() {
+    @ParameterizedTest
+    @EnumSource(QrSizeEnum.class)
+    void createQrCode_generatesImage_withOverlayImage(QrSizeEnum size) {
         var requestDTO = TestData.getSampleCreateQrRequestDTO();
         requestDTO.setImage(new ClassPathResource("twitter-logo.jpg").getInputStream().readAllBytes());
+        requestDTO.setSize(size.getValue());
 
         var responseDTO = qrService.createQrCode(requestDTO);
 
