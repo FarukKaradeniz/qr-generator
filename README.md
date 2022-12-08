@@ -4,6 +4,8 @@
 
 This application creates a QR Code for given text.
 
+[![Build](https://github.com/FarukKaradeniz/qr-generator/actions/workflows/maven.yml/badge.svg)](https://github.com/FarukKaradeniz/qr-generator/actions/workflows/maven.yml)
+
 ## Example 1:
 
 #### Request Payload:
