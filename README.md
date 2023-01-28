@@ -5,6 +5,17 @@
 This application creates a QR Code for given text.
 
 [![Build](https://github.com/FarukKaradeniz/qr-generator/actions/workflows/maven.yml/badge.svg)](https://github.com/FarukKaradeniz/qr-generator/actions/workflows/maven.yml)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=bugs)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=code_smells)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=coverage)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=ncloc)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=alert_status)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=security_rating)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=sqale_index)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
 
 ## Example 1:
 
