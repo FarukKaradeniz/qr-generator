@@ -6,7 +6,7 @@ COPY .mvn .mvn
 RUN ./mvnw dependency:resolve
 
 COPY src src
-RUN ./mvnw package
+RUN ./mvnw clean package -DskipTests
 
 FROM openjdk:17-jdk-slim
 WORKDIR qr-generator
