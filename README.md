@@ -2,7 +2,7 @@
 
 ---
 
-This application creates a QR Code for given text.
+This application generates a QR Code for given text.
 
 [![Build](https://github.com/FarukKaradeniz/qr-generator/actions/workflows/maven.yml/badge.svg)](https://github.com/FarukKaradeniz/qr-generator/actions/workflows/maven.yml)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=FarukKaradeniz_qr-generator&metric=bugs)](https://sonarcloud.io/dashboard?id=FarukKaradeniz_qr-generator)
