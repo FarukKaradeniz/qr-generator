@@ -67,6 +67,8 @@ POST Request Payload
 }
 ```
 
+
+
 | **Field**        | **Is Required**    |    **Available Inputs**    |
 |-----------------	|:---------------:	|:-------------------------:	|
 | text                |       Yes        | Any (Max 3096 characters)    |
